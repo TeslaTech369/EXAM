@@ -11,8 +11,8 @@ MONGO_URI = os.getenv("MONGO_URI")
 client = MongoClient(MONGO_URI)
 db = client["exam_database"]
 
-USERNAME = os.getenv("USERNAME")
-PASSWORD = os.getenv("PASSWORD")
+USERNAME = st.secrets.get("USERNAME")
+PASSWORD = st.secrets.get("PASSWORD")
 
 # Admin Login
 def admin_login():
