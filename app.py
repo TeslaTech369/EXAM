@@ -39,13 +39,12 @@ st.markdown(f"""
     </div>
 """, unsafe_allow_html=True)
 
-# MongoDB connection
-MONGO_URI = os.getenv("mongodb://localhost:27017/")
+MONGO_URI = os.getenv("MONGO_URI")
 client = MongoClient(MONGO_URI)
 db = client["exam_database"]
 
-USERNAME = "a"
-PASSWORD = "a"
+USERNAME = st.secrets.get("USERNAME")
+PASSWORD = st.secrets.get("PASSWORD")
 
 
 # Admin Login
